@@ -10,26 +10,23 @@ Modpack oficial do servidor Dominium — Minecraft 1.21.1 Fabric.
 - **Java 21** ([Adoptium](https://adoptium.net/) ou [Oracle](https://www.oracle.com/java/technologies/downloads/#java21))
 - **PrismLauncher** ([Download](https://prismlauncher.org/download/windows/))
 
-### 1. Importar o pack
+### 1. Criar instância
 1. Abra o PrismLauncher
-2. `Adicionar Instância` → `Importar`
-3. Cole a URL:
-   ```
-   https://ceduardorodrig.github.io/DOMINIUM-MODPACK/pack.toml
-   ```
-4. Confirme — o Prism baixa todos os mods automaticamente
-5. Selecione a instância criada e clique em `Editar`
+2. `Adicionar Instância` → `Custom`:
+   - Versão: **1.21.1**
+   - Loader: **Fabric**
+3. Selecione a instância criada e clique em `Editar`
 
-### 2. Configurar auto-update
+### 2. Configurar auto-update (packwiz-installer-bootstrap)
 1. Baixe o [packwiz-installer-bootstrap.jar](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest) (v0.0.3+)
-2. Coloque o `.jar` na pasta `minecraft/` da instância (ao lado da pasta `mods/`)
+2. Coloque o `.jar` na pasta `minecraft/` da instância (ao lado de `options.txt`)
 3. Em `Editar Instância` → `Configurações` → `Comando de Pré-lançamento`:
    ```
    "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://ceduardorodrig.github.io/DOMINIUM-MODPACK/pack.toml
    ```
 4. Ative a opção para o comando rodar sempre antes de iniciar
 
-A partir de agora, sempre que você abrir o jogo, o bootstrap verifica se há mods novos ou atualizados e baixa automaticamente.
+Agora, ao iniciar o jogo, o bootstrap baixa os 118 mods automaticamente. Nas próximas execuções, ele verifica se há atualizações e baixa só o que mudou.
 
 ### 3. Configurar RAM
 No PrismLauncher, `Editar Instância` → `Configurações` → `Java`:
@@ -51,7 +48,7 @@ Coloque os `.zip` na pasta `resourcepacks/` da instância e ative no jogo em `Op
 
 ### No Psicopompo (Linux)
 ```bash
-cd /home/edu/DOMINIUM-MODPACK
+cd /mnt/NVME_PCI/minecraftserver\ \[dominium\]/DOMINIUM-MODPACK
 
 # Atualizar todos os mods para última versão compatível
 packwiz update --all
