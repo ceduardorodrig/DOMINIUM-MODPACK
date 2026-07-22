@@ -31,8 +31,7 @@ O flag `-s server` filtra apenas mods com `side = "server"` ou `side = "both"`.
 ### 2. Atualizar configs
 
 ```bash
-cd /home/edu/DOMINIUM-MODPACK
-git checkout server
+cd /mnt/NVME_PCI/minecraftserver\ \[dominium\]/DOMINIUM-MODPACK
 git pull
 
 # Copiar configs (com backup automático)
@@ -53,7 +52,7 @@ docker restart crafty-controller
 ## Estrutura
 
 ```
-├── mods/              # Metadados dos mods (106 mods server/both)
+├── mods/              # Metadados dos mods (107 mods server/both)
 ├── config/            # Configs do servidor (293 arquivos)
 │   ├── DistantHorizons.toml
 │   ├── luckperms/
@@ -65,9 +64,11 @@ docker restart crafty-controller
 │   ├── server.properties      # (rcon.password=CHANGE_ME)
 │   ├── ops.json
 │   ├── whitelist.json
-│   ├── usercache.json
-│   └── docker-compose.yml
-├── .gitignore         # Ignora .jar em geral, exceto LuckPerms Placeholders
+│   ├── eula.txt
+│   ├── docker-compose.yml
+│   ├── RCON.txt
+│   └── server-icon.png
+├── .gitignore         # Ignora .jar, usercache.json e dados sensíveis
 └── deploy.sh          # Script de deploy automático
 ```
 
