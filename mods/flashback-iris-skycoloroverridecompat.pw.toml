@@ -1,0 +1,13 @@
+name = "Flashback-Iris-SkyColorOverrideCompat"
+filename = "compatibleirisskyoverride-2.0.0-1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/7zbW87Jg/versions/Au19Hnnb/compatibleirisskyoverride-2.0.0-1.21.1.jar"
+hash-format = "sha512"
+hash = "1680f673aba14cd8e0a25e956f6b0e5655b6647a65647e9899ce1bcbeb6738b9a4349bd33a1bb9fe8e11ab4275304e1dc4453be6951e7a24946511c2f6d16f63"
+
+[update]
+[update.modrinth]
+mod-id = "7zbW87Jg"
+version = "Au19Hnnb"

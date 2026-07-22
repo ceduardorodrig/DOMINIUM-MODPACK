@@ -1,0 +1,11 @@
+{
+  "minDelay": 120,
+  "maxDelay": 300,
+  "fadeDelay": 3,
+  "fadeDuration": 5,
+  "resetDelayOnBiomeSwitch": false,
+  "printOnSkip": true,
+  "enableStructureMusic": true,
+  "structureFadeOut": "NEVER",
+  "debugLog": false
+}

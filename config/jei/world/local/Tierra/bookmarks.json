@@ -1,0 +1,12 @@
+[
+  {"version":2},
+  {"recipe":"immersive_aircraft:engine","recipeType":"minecraft:crafting","bookmarkType":"RECIPE"},
+  {"recipe":"immersive_aircraft:boiler","recipeType":"minecraft:crafting","bookmarkType":"RECIPE"},
+  {"recipe":"minecraft:blast_furnace","recipeType":"minecraft:crafting","bookmarkType":"RECIPE"},
+  {"recipe":"bclib:tag_piston","recipeType":"minecraft:crafting","bookmarkType":"RECIPE"},
+  {"recipe":"betterend:armored_elytra","recipeType":"minecraft:smithing","bookmarkType":"RECIPE"},
+  {"ingredient":{"id":"minecraft:obsidian"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:spruce_trapdoor"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:arrow"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"immersive_aircraft:steel_boiler"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

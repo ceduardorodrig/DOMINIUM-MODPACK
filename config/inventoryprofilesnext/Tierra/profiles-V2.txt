@@ -1,0 +1,27 @@
+profile Survival activate HOT1
+	HOT1
+		"minecraft:diamond_sword" -> [ "minecraft:enchantments"("[\"minecraft:mending\",\"minecraft:fire_aspect\",\"minecraft:sharpness\",\"minecraft:unbreaking\"]") ]
+	HOT2
+		"minecraft:diamond_pickaxe" -> [ "minecraft:enchantments"("[\"minecraft:unbreaking\",\"minecraft:efficiency\"]") ]
+	HOT3
+		"minecraft:cooked_beef"
+	HOT4
+		"minecraft:shield" -> [ "minecraft:enchantments"("[\"minecraft:mending\",\"minecraft:unbreaking\"]") ]
+	HOT5
+		"minecraft:torch"
+	HOT6
+		"minecraft:diamond_axe" -> [ "minecraft:enchantments"("[\"minecraft:unbreaking\",\"minecraft:efficiency\"]") ]
+	HOT7
+		"minecraft:diamond_shovel" -> [ "minecraft:enchantments"("[\"minecraft:unbreaking\",\"minecraft:efficiency\"]") ]
+	HOT8
+		"minecraft:crossbow" -> [ "minecraft:enchantments"("[\"minecraft:mending\",\"minecraft:quick_charge\",\"minecraft:multishot\",\"minecraft:unbreaking\"]") ]
+	HOT9
+		"minecraft:red_shulker_box"
+	HEAD
+		"minecraft:diamond_helmet" -> [ "minecraft:enchantments"("[\"minecraft:mending\",\"minecraft:respiration\",\"minecraft:protection\"]") ]
+	CHEST
+		"minecraft:elytra" -> [ "minecraft:enchantments"("[\"minecraft:mending\",\"minecraft:unbreaking\"]") ]
+	LEGS
+		"minecraft:diamond_leggings" -> [ "minecraft:enchantments"("[\"minecraft:swift_sneak\",\"minecraft:mending\",\"minecraft:protection\"]") ]
+	FEET
+		"minecraft:diamond_boots" -> [ "minecraft:enchantments"("[\"minecraft:mending\",\"minecraft:feather_falling\",\"minecraft:protection\"]") ]

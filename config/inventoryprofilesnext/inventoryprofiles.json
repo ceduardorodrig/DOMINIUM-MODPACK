@@ -1,0 +1,26 @@
+{
+    "ModSettings": {
+        "first_run": false
+    },
+    "AutoRefillSettings": {
+        "auto_refill_prefer_smaller_stacks": true,
+        "refill_armor": {
+            "value": false
+        },
+        "refill_before_tool_break": {
+            "value": false
+        },
+        "tool_damage_threshold": 0,
+        "auto_refill_enable_indicator_icons": {
+            "value": false
+        },
+        "auto_refill_match_any_food": true
+    },
+    "Hotkeys": {
+        "sort_inventory": {
+            "main": {
+                "keys": "S"
+            }
+        }
+    }
+}

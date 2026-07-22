@@ -1,0 +1,13 @@
+name = "Dominium Modpack"
+author = "ceduardorodrig"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "349fc6adbea8a3916c0e0a9f60fd81864f7b820da389f76d5a67af6ceb461fd8"
+
+[versions]
+fabric = "0.19.3"
+minecraft = "1.21.1"
