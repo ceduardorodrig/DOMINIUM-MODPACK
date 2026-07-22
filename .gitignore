@@ -1,3 +1,9 @@
 *.jar
 *.zip
 *.mrpack
+
+# Exceção: LuckPerms Placeholders (não está no Modrinth)
+!mods/LuckPerms-Fabric-Placeholders.jar
+
+# Dados sensíveis do servidor
+config/playit-companion/agent_key.txt

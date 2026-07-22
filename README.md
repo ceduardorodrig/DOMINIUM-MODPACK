@@ -1,115 +1,79 @@
-# Dominium Modpack
+# Dominium Modpack — Servidor
 
-Modpack oficial do servidor Dominium — Minecraft 1.21.1 Fabric.
+Branch `server` — mods + configs específicos do servidor Dominium.
 
-**Packwiz + GitHub Pages** com auto-update via `packwiz-installer-bootstrap`.
+Usa o mesmo sistema **Packwiz** do branch `main`, mas com:
 
-## Instalação (amigos)
+- Apenas mods `server`/`both` (sem mods visuais/client)
+- Configs do servidor (DistantHorizons, LuckPerms, etc.)
+- Dados do LuckPerms (permissões e grupos)
+- Script de deploy para o Crafty Controller
 
-### Pré-requisitos
-- **Java 21** ([Adoptium](https://adoptium.net/) ou [Oracle](https://www.oracle.com/java/technologies/downloads/#java21))
-- **PrismLauncher** ([Download](https://prismlauncher.org/download/windows/))
+## Deploy no Crafty Controller
 
-### 1. Importar o pack
-1. Abra o PrismLauncher
-2. `Adicionar Instância` → `Importar`
-3. Cole a URL:
-   ```
-   https://ceduardorodrig.github.io/DOMINIUM-MODPACK/pack.toml
-   ```
-4. Confirme — o Prism baixa todos os mods automaticamente
-5. Selecione a instância criada e clique em `Editar`
+### 1. Sincronizar mods via packwiz
 
-### 2. Configurar auto-update
-1. Baixe o [packwiz-installer-bootstrap.jar](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest) (v0.0.3+)
-2. Coloque o `.jar` na pasta `minecraft/` da instância (ao lado da pasta `mods/`)
-3. Em `Editar Instância` → `Configurações` → `Comando de Pré-lançamento`:
-   ```
-   "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://ceduardorodrig.github.io/DOMINIUM-MODPACK/pack.toml
-   ```
-4. Ative a opção para o comando rodar sempre antes de iniciar
+```bash
+cd /mnt/NVME_PCI/minecraftserver \[dominium\]/MINECRAFT\ SERVER
 
-A partir de agora, sempre que você abrir o jogo, o bootstrap verifica se há mods novos ou atualizados e baixa automaticamente.
+# Baixar packwiz-installer-bootstrap (se não tiver)
+curl -L -o packwiz-installer-bootstrap.jar \
+  https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
 
-### 3. Configurar RAM
-No PrismLauncher, `Editar Instância` → `Configurações` → `Java`:
-- **Mínimo**: 2048 MB
-- **Máximo**: 6144 MB (ou mais, se seu PC permitir)
+# Instalar/atualizar mods server-side
+java -jar packwiz-installer-bootstrap.jar \
+  -s server \
+  https://ceduardorodrig.github.io/DOMINIUM-MODPACK/pack.toml
+```
 
-### 4. Conectar ao servidor
-- **IP**: `dominium.mc-srv.com` (ou o IP atual do servidor)
-- **Porta**: 25565 (padrão)
+O flag `-s server` filtra apenas mods com `side = "server"` ou `side = "both"`.
 
-### 5. Opcionais (resource packs)
-O pack já inclui 2 resource packs via Modrinth. Você pode baixar mais manualmente:
-- **Fresh Animations**: https://modrinth.com/resourcepack/fresh-animations
-- **Bare Bones**: https://modrinth.com/resourcepack/bare-bones
+### 2. Atualizar configs
 
-Coloque os `.zip` na pasta `resourcepacks/` da instância e ative no jogo em `Opções → Resource Packs`.
-
-## Para desenvolvedores (atualizar mods)
-
-### No Psicopompo (Linux)
 ```bash
 cd /home/edu/DOMINIUM-MODPACK
+git checkout server
+git pull
 
-# Atualizar todos os mods para última versão compatível
-packwiz update --all
+# Copiar configs (com backup automático)
+cp -r config/* "/mnt/NVME_PCI/minecraftserver [dominium]/MINECRAFT SERVER/config/"
+cp -r data/luckperms/ "/mnt/NVME_PCI/minecraftserver [dominium]/MINECRAFT SERVER/mods/luckperms/"
 
-# Se um mod específico quebrar, pode fixar a versão:
-# packwiz mr add <slug> --version-id <id>
-
-# Atualizar index
-packwiz refresh
-
-# Commitar e publicar
-git add -A
-git commit -m "Atualizar mods para $(date +%d/%m/%Y)"
-git push
+# Lembrar de trocar as senhas nos templates:
+# server/server.properties → rcon.password=CHANGE_ME
+# config/playit-companion/agent_key.txt → CHANGE_ME
 ```
 
-### Adicionar um mod novo
+### 3. Reiniciar container
+
 ```bash
-# Mods do Modrinth
-packwiz mr add <slug>
-
-# Mods de URL direta (ex: versão beta de algum mod)
-packwiz url add <nome> <url_do_jar>
-
-# Depois
-packwiz refresh
-git add -A && git commit -m "Adicionar <mod>" && git push
+docker restart crafty-controller
 ```
 
-### Remover um mod
+## Estrutura
+
+```
+├── mods/              # Metadados dos mods (106 mods server/both)
+├── config/            # Configs do servidor (293 arquivos)
+│   ├── DistantHorizons.toml
+│   ├── luckperms/
+│   ├── servercore/
+│   ├── voicechat/
+│   └── ...
+├── data/luckperms/    # Banco de permissões (contexts.json + .mv.db)
+├── server/            # Arquivos raiz do servidor (templates)
+│   ├── server.properties      # (rcon.password=CHANGE_ME)
+│   ├── ops.json
+│   ├── whitelist.json
+│   ├── usercache.json
+│   └── docker-compose.yml
+├── .gitignore         # Ignora .jar em geral, exceto LuckPerms Placeholders
+└── deploy.sh          # Script de deploy automático
+```
+
+## Deploy rápido
+
 ```bash
-packwiz remove <slug>
-packwiz refresh
-git add -A && git commit -m "Remover <mod>" && git push
+chmod +x deploy.sh
+./deploy.sh
 ```
-
-## Sincronização com o servidor
-
-O servidor roda no **crafty-controller** (Docker) no Psicopompo.
-
-Para atualizar os mods do servidor com os do pack:
-```bash
-python3 /mnt/NVME_PCI/minecraftserver\\ \[dominium\]/sync_mods.py
-```
-
-(O script baixa os mods `both`/`server` do packwiz e reinicia o container.)
-
-## Estrutura do repositório
-```
-├── pack.toml          # Configuração do packwiz
-├── index.toml         # Índice com hashes de todos os arquivos
-├── mods/              # Metadados dos mods (.pw.toml)
-├── config/            # Configurações do cliente
-├── resourcepacks/     # Metadados dos resource packs
-├── .gitattributes     # Desabilita conversão de linha (importante para hashes)
-└── .gitignore         # Ignora .jar, .zip, .mrpack
-```
-
-## Licença
-
-Este repositório contém apenas metadados. Os mods são propriedade de seus respectivos autores e estão sujeitos às suas próprias licenças.

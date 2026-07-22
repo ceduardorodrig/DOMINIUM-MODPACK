@@ -80,7 +80,7 @@
     "schematicVcsDeleteMode": "matching_block",
     "selectionCornersMode": "corners",
     "commandFillMaxVolume": 32768,
-    "commandLimitPerTick": 256,
+    "commandLimitPerTick": 24,
     "commandNameClone": "clone",
     "commandNameFill": "fill",
     "commandNameSetblock": "setblock",
@@ -136,13 +136,13 @@
       "keys": ""
     },
     "nudgeSelectionNegative": {
-      "keys": "MINUS"
+      "keys": ""
     },
     "nudgeSelectionPositive": {
-      "keys": "EQUAL"
+      "keys": ""
     },
     "moveEntireSelection": {
-      "keys": "J"
+      "keys": ""
     },
     "openGuiAreaSettings": {
       "keys": "KP_MULTIPLY"
@@ -196,7 +196,7 @@
       "keys": "F3,M"
     },
     "saveAreaAsInMemorySchematic": {
-      "keys": "LEFT_ALT,LEFT_CONTROL,D"
+      "keys": ""
     },
     "saveAreaAsSchematicToFile": {
       "keys": "LEFT_CONTROL,LEFT_ALT,S"
@@ -223,7 +223,7 @@
       "keys": ""
     },
     "schematicPlacementRotation": {
-      "keys": "CAPS_LOCK"
+      "keys": ""
     },
     "schematicPlacementMirror": {
       "keys": ""
@@ -241,7 +241,7 @@
       "keys": ""
     },
     "selectionGrabModifier": {
-      "keys": "J"
+      "keys": ""
     },
     "selectionGrow": {
       "keys": ""

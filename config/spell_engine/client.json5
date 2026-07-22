@@ -2,6 +2,7 @@
 	"renderBeamsHighLuminance": true,
 	"holdToCastChannelled": true,
 	"holdToCastCharged": true,
+	"autoSwapHands": true,
 	"spellHotbarHidesOffhand": true,
 	"spellHotbarUseKey": true,
 	"spell_hotbar_1_defer": "HOTBAR_KEY_1",
