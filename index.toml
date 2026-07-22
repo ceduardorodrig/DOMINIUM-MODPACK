@@ -33,6 +33,30 @@ file = "config/Veinminer/settings.json"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
+file = "config/Veinminer/update/veinminer-client-2.4.2.jar"
+hash = "b3925c96150f7662f687dbf3ce9ffb26f89fe9059a5b1e9e2a87ee34a5b496ef"
+
+[[files]]
+file = "config/Veinminer/update/veinminer-enchant-2.2.0.jar"
+hash = "cb47a2048d1a0b6b1fad3a1be326afa29ecb3b51b98f40ec54f6c9b73646902d"
+
+[[files]]
+file = "config/Veinminer/update/veinminer-enchant-2.2.1.jar"
+hash = "63f85cc5c747df39caf96aba65be26d09602ccd92b5081991ff23f699fa1bfb2"
+
+[[files]]
+file = "config/Veinminer/update/veinminer-enchant-2.2.2.jar"
+hash = "77cc34ca5efed90a2ec9e954a0d895cd37c23ae1455aa0b59501e5712ab2cfdc"
+
+[[files]]
+file = "config/Veinminer/update/veinminer-fabric-2.1.5.jar"
+hash = "ae48c7b41ddb7a672bc6993163241086e97168cd471deb611406c04be2f8595f"
+
+[[files]]
+file = "config/Veinminer/update/veinminer-fabric-2.4.2.jar"
+hash = "80dafbd691cf025ba92d05317c45b46a5d6d4d1a3baa97ac1eb7b2cb56d19342"
+
+[[files]]
 file = "config/additionalstructures/structure_placement_config.json5"
 hash = "d1dea22826a8c3e553ba351f2c8cb0bf59197037937a25cf5f4f49a63e2156e5"
 
@@ -845,6 +869,10 @@ file = "config/pingwheel.server.json"
 hash = "821d5d12d0c096996c82d1a65349ac803adffcc25b89420a146c727fb92b381a"
 
 [[files]]
+file = "config/playit-companion/agent_key.txt"
+hash = "442cbf3fdf0f24777036e660c32d6e4b5f7621231bff2754673c5a188a2f614a"
+
+[[files]]
 file = "config/presencefootsteps/updater.json"
 hash = "1e7c61df09c105e1eeca8cf3dcbdfeb976700e9904bcb3983fc7791adb7fad2e"
 
@@ -1117,6 +1145,14 @@ file = "config/vanilla_structures/toggle_structure_config.json5"
 hash = "c4fb220488de3c1afc569f4b8a89d8e97f8b5504eeb59d9700b491f29718d2f9"
 
 [[files]]
+file = "config/veinminer/update/veinminer-client-2.4.2.jar"
+hash = "b3925c96150f7662f687dbf3ce9ffb26f89fe9059a5b1e9e2a87ee34a5b496ef"
+
+[[files]]
+file = "config/veinminer/update/veinminer-fabric-2.4.2.jar"
+hash = "80dafbd691cf025ba92d05317c45b46a5d6d4d1a3baa97ac1eb7b2cb56d19342"
+
+[[files]]
 file = "config/visuality.json"
 hash = "1561b99ae57ede995dfb64a91ac5b53dd877f57e4a8f1859526da84511bcec07"
 
@@ -1293,11 +1329,6 @@ file = "config/yacl.json5"
 hash = "121b93764159be6fb7dab523b29a844e2bb78400ce8c48f52135a097e9b0006e"
 
 [[files]]
-file = "mods/additional-structures.pw.toml"
-hash = "86364ddf4303cb39f92bf9b45578ad2ef04f8da58de00858207b57668a34dd8e"
-metafile = true
-
-[[files]]
 file = "mods/almanac.pw.toml"
 hash = "01174ec973f9c2267f4d6ae6040941a3e764af58f9fa0b0a9f2914ce5630d728"
 metafile = true
@@ -1335,11 +1366,6 @@ metafile = true
 [[files]]
 file = "mods/atmosfera.pw.toml"
 hash = "b3cc0b30fabf095f174bd6731282a806792cc55ca6cfa04142f81339d7564529"
-metafile = true
-
-[[files]]
-file = "mods/autonomous-minecarts.pw.toml"
-hash = "b3f01ece1ef626d4e680f583c55452e351995adc45c60d6c7364aff8a5fdd4a1"
 metafile = true
 
 [[files]]
@@ -1398,11 +1424,6 @@ hash = "1e4faa76a8e5471099a6e33406679d00c0276c571890b6cfa4b8f5605fa6ab74"
 metafile = true
 
 [[files]]
-file = "mods/blood-moon.pw.toml"
-hash = "8c7c4994135e8ba1fec6d358afb493605ba75471ef062c1ff43e248fc698785e"
-metafile = true
-
-[[files]]
 file = "mods/blossom-blade.pw.toml"
 hash = "f6401818ae391915190fe169d5d2d8e9518ec4d48c6abc523a881715cfeb26b3"
 metafile = true
@@ -1430,11 +1451,6 @@ metafile = true
 [[files]]
 file = "mods/cardinal-components-api.pw.toml"
 hash = "0c345c80310a4bd58c757e43d6060338a85d34eaffcb674a6e9cbf22ecbc9cb8"
-metafile = true
-
-[[files]]
-file = "mods/cherry-villages.pw.toml"
-hash = "ebd2d7b9f6991d780b9b3d1c8fd5f549ac1886ce9459d67c7f6a5aae4f1c3ad4"
 metafile = true
 
 [[files]]
@@ -1488,11 +1504,6 @@ hash = "aa2c192c435e084d54b48ed426e7ebae469d162b636f7dccbd0e68ba8f79764e"
 metafile = true
 
 [[files]]
-file = "mods/darcenos-minecarts.pw.toml"
-hash = "e2b01e4e06d7f0f3cf82cdb985947135dd432d971fc2e4068db6c28c8b3143a9"
-metafile = true
-
-[[files]]
 file = "mods/deeperdarker.pw.toml"
 hash = "d056036f71ac0fe66147f415e0142c1fd8889c065b7f1e5880ad3d46c583136f"
 metafile = true
@@ -1543,11 +1554,6 @@ hash = "8c091c9a660b84f152e47c0d835d8865463ad79636264a68ca6d312399b46538"
 metafile = true
 
 [[files]]
-file = "mods/explorations.pw.toml"
-hash = "7232424fa28fee9704c409e2ed1fa1c8d472fdfa7733f8ff8e9d91aa8082ff7c"
-metafile = true
-
-[[files]]
 file = "mods/explorify.pw.toml"
 hash = "6adce6422e74091638dbd7872270ee58d9a22dc18340580f809cc50c739e0d4f"
 metafile = true
@@ -1595,11 +1601,6 @@ metafile = true
 [[files]]
 file = "mods/geckolib.pw.toml"
 hash = "3d26ad5d3f7693336b18c894f37978f7490d284f7f3b19b46d0527a7938789fc"
-metafile = true
-
-[[files]]
-file = "mods/geophilic.pw.toml"
-hash = "e56f8bbfe55aa00d09e341913cba870fb6218fba8df4a136f2443705982bce1f"
 metafile = true
 
 [[files]]
@@ -1715,11 +1716,6 @@ metafile = true
 [[files]]
 file = "mods/mutant-monsters.pw.toml"
 hash = "5dc69d7e3b51af646f3506007cc0f2b98f587787959f959069c5211c0e5b6574"
-metafile = true
-
-[[files]]
-file = "mods/noisium.pw.toml"
-hash = "dcc936d7bd32a86ce63fa3bf013864a4e2ed979cb126a915153ac70ce5e5671f"
 metafile = true
 
 [[files]]
@@ -1875,16 +1871,6 @@ metafile = true
 [[files]]
 file = "mods/terralith.pw.toml"
 hash = "66e1ed3e329e3ffa72a59acf74fae153157e6fb7d836afedb687b61ec2d8113a"
-metafile = true
-
-[[files]]
-file = "mods/tidal-towns.pw.toml"
-hash = "0ccb1c696758d7935d02dd5160987cab8d3594ab24f89deb01c28f9e596094e7"
-metafile = true
-
-[[files]]
-file = "mods/towns-and-towers.pw.toml"
-hash = "5518dd2f6a5d88e4affb9df628604737893025206d7149579e4c24f909b130a3"
 metafile = true
 
 [[files]]
