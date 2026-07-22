@@ -1,0 +1,13 @@
+name = "autonomous-minecarts"
+filename = "autonomous-minecarts-1.1.3.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/EdUFs6Fs/versions/k4SeIMwj/autonomous-minecarts-1.1.3.jar"
+hash-format = "sha512"
+hash = "769cbbe60ffab4b01889f81bad09becfd4b9dd99c86cbe9f5c054423e451ca984ad95fbe5253c900859fb40d3197300ad946838aa060fdd61f89358de79d2343"
+
+[update]
+[update.modrinth]
+mod-id = "EdUFs6Fs"
+version = "k4SeIMwj"
