@@ -1,0 +1,77 @@
+# Console remoto (RCON) e comandos sem abrir o jogo - PSICOPOMPO
+# =================================================================
+
+## O que e RCON
+
+RCON e o protocolo nativo do Minecraft para enviar comandos de console pela rede
+com senha + porta. Com Docker, usamos um cliente (`itzg/rcon-cli`) no host sem precisar
+do cliente grafico do Minecraft.
+
+## Onde esta a configuracao
+
+- `server.properties`: `enable-rcon=true`, `rcon.port=25575`, `rcon.password=...`
+- `docker-compose.yml`: porta publicada **apenas em localhost**:
+  `127.0.0.1:25575:25575` (nao expor na internet / Tailscale).
+
+## Senha
+
+A senha atual esta em `server.properties` (chave `rcon.password`).
+Troque se vazar ou se este repositorio/pasta for compartilhada.
+
+## Modelo de comando (PowerShell / CMD)
+
+Use sempre o mesmo prefixo (ajuste a senha se mudar):
+
+  docker run --rm --network container:psicopompo-minecraft itzg/rcon-cli ^
+    --port 25575 --password SUA_SENHA_AQUI COMANDO AQUI
+
+Exemplos (comandos **sem** barra inicial `/` - e o formato do console dedicado):
+
+  ... rcon-cli ... backup start
+  ... rcon-cli ... list
+  ... rcon-cli ... say Manutencao
+
+## AdvancedBackups (2.2+)
+
+O mod registra comandos com prefixo `/backup` no jogo; via RCON/console use:
+
+  backup start
+
+`backup reload-config` recarrega `config/AdvancedBackups.properties` sem reiniciar o jar
+(ver documentacao do mod).
+
+### Atividade entre backups (`config.advancedbackups.activity`)
+
+Esta em `false` para permitir backup agendado ou `backup start` via RCON **sem** precisar
+que um jogador tenha entrado desde o ultimo backup. Isso cobre:
+
+- manutencao com servidor vazio;
+- Chunky/worldgen com voce so no console;
+- scripts no host.
+
+Se voltar para `true`, o mod pode **recusar** backups quando ninguem entrou no mundo
+entre um backup e outro (comportamento padrao do FAQ do mod).
+
+## Chunky (pregen) sem CMD no Java antigo
+
+No bare metal, voce digitava no console do processo Java. No Docker, o equivalente e:
+
+1. **RCON** (recomendado): mesma linha `docker run ... rcon-cli ...` com comandos Chunky.
+2. **Attach**: `docker attach psicopompo-minecraft` (sair sem matar o servidor: Ctrl+P, Ctrl+Q).
+
+Comandos Chunky tipicos (sem `/` no RCON):
+
+  chunky progress
+  chunky world minecraft:overworld
+  chunky pause minecraft:overworld
+  chunky continue minecraft:overworld
+  chunky cancel minecraft:overworld
+  chunky start minecraft:overworld
+
+(Ajuste o ID do mundo se usar outro nivel; use `chunky` sem argumentos ou `help` se o mod
+mostrar sintaxe diferente na sua versao.)
+
+## Seguranca
+
+- Nao publique a porta 25575 fora do localhost sem firewall/VPN adequados.
+- A senha do RCON e equivalente a poder de operador no console.

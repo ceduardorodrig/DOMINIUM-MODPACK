@@ -7,3 +7,6 @@
 
 # Dados sensíveis do servidor
 config/playit-companion/agent_key.txt
+
+# Auto-gerado pelo servidor (cache de jogadores, muda sempre)
+server/usercache.json
